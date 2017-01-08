@@ -8,7 +8,7 @@
 		<script language="javascript" type="text/javascript" src="./irc.js"></script>
 	</head>
 	<?php
-		$_SESSION['user'] = "ADMIN";
+		$_SESSION['user'] = "..."; // Ici le nom d'utilisateur
 		$user = $_SESSION['user'];
 	?>
 	<body>
