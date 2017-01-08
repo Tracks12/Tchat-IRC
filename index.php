@@ -9,7 +9,7 @@
 	</head>
 	<?php
 		$_SESSION['user'] = "ADMIN";
-		$user = $_SESSION['user'] = "ADMIN";
+		$user = $_SESSION['user'];
 	?>
 	<body>
 		<div class="tchat">
