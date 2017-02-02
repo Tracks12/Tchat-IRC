@@ -37,7 +37,7 @@
 							}
 						}
 						
-						echo($frame);
+						echo("<p>Chargement en cours...</p>");
 						fclose($history);
 					?>
 				</div>
