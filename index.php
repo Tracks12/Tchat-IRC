@@ -19,7 +19,8 @@
 			<div class="tchat_body">
 				<div id="tchat_area">
 					<?php
-						$history = fopen('./history.htm', 'r+');
+						$path = './history.htm';
+						$history = fopen($path, 'r+');
 						$frame = fgets($history);
 						
 						if(!isset($_POST['message'])) {
