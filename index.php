@@ -47,6 +47,12 @@
 						<input type="submit" value="Envoyer" />
 					</form>
 				</div>
+				<script language="javascript" type="text/javascript">
+					var lien = <?php echo("'".$path."'"); ?>;
+					element = document.getElementById('tchat_area');
+					element.scrollTop = element.scrollHeight;
+					document.getElementById('text_input').focus();
+				</script>
 			</div>
 		</div>
 	</body>
