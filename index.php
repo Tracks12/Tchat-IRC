@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- index.php -->
-<?php session_start() ?>
+<?php session_start(); ?>
 <html>
 	<head>
 		<meta charset="UTF-8">
@@ -11,7 +11,7 @@
 		$_SESSION['user'] = "..."; // Ici le nom d'utilisateur
 		$user = $_SESSION['user'];
 	?>
-	<body>
+	<body onload="startTime();">
 		<div class="tchat">
 			<div class="title">
 				<h3>Chat IRC</h3>
@@ -23,14 +23,10 @@
 						$history = fopen($path, 'r+');
 						$frame = fgets($history);
 						
-						if(!isset($_POST['message'])) {
-							echo("");
-						}
+						if(!isset($_POST['message'])) { echo(""); }
 						else if($_POST['message']) {
 							$msg = $_POST['message'];
-							if($msg == "Ecrivez votre message...") {
-								echo("");
-							}
+							if($msg == "Ecrivez votre message...") { echo(""); }
 							else {
 								$sending = '> '.$user.': '.$msg.'<br />';
 								fputs($history, $sending);
