@@ -1,6 +1,6 @@
 /*********************
 *                    *
-*    File: irc.js    *
+*    File: IRC.js    *
 *                    *
 *********************/
 
@@ -12,28 +12,21 @@ if(obj.overrideMimeType) { obj.overrideMimeType("text/xml"); } // Safari le shei
 // Fonction de récupération de donnée d'un fichier
 function refresh_tchat(tchat) {
 	var output_tchat = document.getElementById('tchat_area');
+	var element = document.getElementById('tchat_area');
 	
 	obj.open('GET', tchat, false);
 	obj.send(null);
 	
 	output_tchat.innerHTML = obj.responseText;
+	
+	if(element.scrollTop == 0) { element.scrollTop = element.scrollHeight; }
+	return obj.responseText;
 }
 
 function startTime() {
 	var output_tchat = document.getElementById('tchat_area');
 	t = setTimeout(function() { startTime(); }, 500);
 	refresh_tchat(lien);
-}
-
-function info_tchat(msg) {
-	var entry = document.getElementById('text_input');
-	
-	if(msg == 'Ecrivez votre message...') {
-		entry.value = '';
-	}
-	else if(msg == '') {
-		entry.value = 'Ecrivez votre message...';
-	}
 }
 
 /******
